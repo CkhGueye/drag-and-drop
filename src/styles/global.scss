@@ -1,0 +1,65 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+:root {
+    font-size: 10px;
+}
+
+body {
+    background: linear-gradient(145deg, #b9ddf2, #f9e5cb);
+    min-height: 100vh;
+    font-size: 1.6rem;
+    font-family: "Roboto";
+    padding: 4rem;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    gap: 5rem;
+}
+
+.canvas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: spacing(1.5);
+    min-height: 30rem;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0.2rem;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #eee;
+    }
+}
+
+button {
+    font-size: 2.2rem;
+    padding: spacing(1) spacing(3);
+    background-color: #fff;
+    border: unset;
+    cursor: pointer;
+    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -6px rgba(0, 0, 0, 0.13);
+    &:active {
+        box-shadow: unset;
+    }
+}

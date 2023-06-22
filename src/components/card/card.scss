@@ -1,0 +1,19 @@
+.card {
+    background-color: rgba($white, 0.5);
+    padding: spacing(1);
+    border: 1px solid $white;
+    width: 100%;
+    max-width: 72rem;
+    margin: auto;
+    box-shadow: 0 20px 25px -5px #0000001a,
+        0 8px 10px -6px #0000001a;
+    border-radius: spacing(1.5);
+
+    &-content {
+        background-color: $white;
+        max-width: 70rem;
+        margin: auto;
+        height: 100%;
+        position: relative;
+    }
+}
