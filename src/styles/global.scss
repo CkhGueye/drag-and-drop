@@ -23,6 +23,11 @@ body {
     min-height: 100vh;
     font-size: 1.6rem;
     font-family: "Roboto";
+}
+
+#root {
+    position: relative;
+    min-height: 100vh;
     padding: 4rem;
 }
 
@@ -48,18 +53,5 @@ body {
         left: 50%;
         transform: translateX(-50%);
         background-color: #eee;
-    }
-}
-
-button {
-    font-size: 2.2rem;
-    padding: spacing(1) spacing(3);
-    background-color: #fff;
-    border: unset;
-    cursor: pointer;
-    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.1),
-        0 10px 10px -6px rgba(0, 0, 0, 0.13);
-    &:active {
-        box-shadow: unset;
     }
 }

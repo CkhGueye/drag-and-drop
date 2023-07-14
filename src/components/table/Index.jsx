@@ -1,8 +1,7 @@
 import Card from "../card/Index";
 import "./table.scss";
 
-export default function Table({ tableData }) {
-  const { leftZone, rightZone } = tableData;
+export default function Table({ tableData: { leftZone, rightZone } }) {
   return (
     <Card className="summary">
       <div className="table">

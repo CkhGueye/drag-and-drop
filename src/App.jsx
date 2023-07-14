@@ -1,13 +1,13 @@
 import { useRef, useState } from "react";
-import "./styles/global.scss";
 import Draggable from "./components/draggable/Index";
 import Table from "./components/table/Index";
 import Card from "./components/card/Index";
+import Footer from "./components/footer/Index";
+import "./styles/global.scss";
 
 function App() {
   const [leftZone, setLeftZone] = useState([]);
   const [rightZone, setRightZone] = useState([]);
-  const [tableData, setTableData] = useState([]);
   const items = [
     "👋 Hi",
     "😀 I'm Cheikhou",
@@ -43,43 +43,36 @@ function App() {
   };
 
   const hasPassedTheMiddleLine = (element, container) => {
-    var containerRect = container.getBoundingClientRect();
-    var containerMiddleLine = containerRect.left + containerRect.width / 2;
+    const containerRect = container.getBoundingClientRect();
+    const containerMiddleLine = containerRect.left + containerRect.width / 2;
 
-    var elementRect = element.getBoundingClientRect();
-    var elementPosition = elementRect.left;
+    const elementRect = element.getBoundingClientRect();
+    const elementPosition = elementRect.left;
 
     // Check if the element is positioned after the middle line
     return elementPosition > containerMiddleLine;
   };
 
-  const handleButton = () => {
-    setTableData({
-      leftZone: [...leftZone],
-      rightZone: [...rightZone],
-    });
-  };
-
   return (
-    <div className="container">
-      <Card>
-        <div ref={containerRef} className="canvas">
-          {items.map((item, idx) => (
-            <Draggable
-              key={idx}
-              id={idx}
-              containerRef={containerRef}
-              text={item}
-              handleDrag={handleDrag}
-            />
-          ))}
-        </div>
-      </Card>
-      <button type="button" onClick={handleButton}>
-        Save
-      </button>
-      <Table tableData={tableData} />
-    </div>
+    <>
+      <div className="container">
+        <Card>
+          <div ref={containerRef} className="canvas">
+            {items.map((item, idx) => (
+              <Draggable
+                key={idx}
+                id={idx}
+                containerRef={containerRef}
+                text={item}
+                handleDrag={handleDrag}
+              />
+            ))}
+          </div>
+        </Card>
+        <Table tableData={{ leftZone, rightZone }} />
+      </div>
+      <Footer />
+    </>
   );
 }
 

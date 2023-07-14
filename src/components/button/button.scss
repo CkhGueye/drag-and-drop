@@ -1,0 +1,14 @@
+button {
+    background-color: #fff;
+    border: unset;
+    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -6px rgba(0, 0, 0, 0.13);
+    border-radius: spacing(0.5);
+    font-size: 2.2rem;
+    padding: spacing(1) spacing(3);
+    cursor: pointer;
+
+    &:active {
+        box-shadow: unset;
+    }
+}
